@@ -273,7 +273,7 @@ path = "{}.rs""#,
 
     // Check that the exercise looks to be solved using self.state()
     // This is not the best way to check since
-    // the user can just remove the "I AM NOT DONE" string from the file
+    // the user can just remove the "" string from the file
     // without actually having solved anything.
     // The only other way to truly check this would to compile and run
     // the exercise; which would be both costly and counterintuitive
@@ -334,7 +334,7 @@ mod test {
                 important: false,
             },
             ContextLine {
-                line: "// I AM NOT DONE".to_string(),
+                line: "// ".to_string(),
                 number: 3,
                 important: true,
             },

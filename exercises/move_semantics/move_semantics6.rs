@@ -1,28 +1,19 @@
-// move_semantics6.rs
-//
-// You can't change anything except adding or removing references.
-//
-// Execute `rustlings hint move_semantics6` or use the `hint` watch subcommand
-// for a hint.
-
-// I AM NOT DONE
-
 fn main() {
     let data = "Rust is great!".to_string();
 
-    get_char(data);
+    get_char(&data);
 
-    string_uppercase(&data);
+    let uppercased_data = string_uppercase(data);
+
+    println!("{}", uppercased_data);
 }
 
 // Should not take ownership
-fn get_char(data: String) -> char {
+fn get_char(data: &String) -> char {
     data.chars().last().unwrap()
 }
 
-// Should take ownership
-fn string_uppercase(mut data: &String) {
-    data = &data.to_uppercase();
-
-    println!("{}", data);
+// Should take ownership and return a new uppercase String
+fn string_uppercase(data: String) -> String {
+    data.to_uppercase()
 }

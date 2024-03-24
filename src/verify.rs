@@ -197,7 +197,7 @@ fn prompt_for_completion(exercise: &Exercise, prompt_output: Option<String>, suc
     println!("You can keep working on this exercise,");
     println!(
         "or jump into the next one by removing the {} comment:",
-        style("`I AM NOT DONE`").bold()
+        style("``").bold()
     );
     println!();
     for context_line in context {
